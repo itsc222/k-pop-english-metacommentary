@@ -46,6 +46,8 @@ colnames(data)
 data |>
   group_by(Source) |>
   count(Source) -> sources
+
+sources
 ```
 
 ```{r}
@@ -79,5 +81,11 @@ data |>
 data |>
   select(Commentary, Recode) |>
   filter(Recode == "Positive")
+```
+
+```{r}
+data |>
+  select(Song.Title, Artist, Commentary) |>
+  filter(grepl('cring', Commentary))
 ```
 
